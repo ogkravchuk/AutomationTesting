@@ -1,4 +1,4 @@
-package begginer;
+package beginner;
 
 public class Task10 {
 
@@ -18,7 +18,7 @@ public class Task10 {
 		}
 	}
 	public static void main(String[] args) {
-		print(3);
+		print(10);
 
 	}
 

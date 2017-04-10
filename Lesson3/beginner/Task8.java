@@ -1,4 +1,4 @@
-package begginer;
+package beginner;
 
 public class Task8 {
 
@@ -16,8 +16,7 @@ public class Task8 {
 	}
 	public static void main(String[] args){
 		String s="Testing";
-		int n = 4;
-		s=printCharacters(s,n);
-		System.out.println(s);
+		int n = 6;
+		System.out.println(printCharacters(s, n));
 	}
 }

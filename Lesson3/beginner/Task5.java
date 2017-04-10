@@ -1,4 +1,4 @@
-package begginer;
+package beginner;
 
 public class Task5 {
 
