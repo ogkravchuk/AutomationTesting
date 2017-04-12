@@ -12,7 +12,7 @@ public class Task3 {
 		public static void main(String[] args){
 		int[][] numbers = {{11,31}, {110,21},{8,10},{4,3}};
 		Task3 Three=new Task3();
-		System.out.println("Given two integers, a and b.\n "
+		System.out.println("Given two integers, a and b.\n"
 				+ "Create a method (program) which returns True if one if them is 21 or if their sum is 21");
 		for(int[] newTwo: numbers)
 		{

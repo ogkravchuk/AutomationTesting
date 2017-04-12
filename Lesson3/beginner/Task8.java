@@ -15,8 +15,12 @@ public class Task8 {
 	    return a1;
 	}
 	public static void main(String[] args){
+		System.out.println("Given a string and an int n. Return a string made of the first n characters of the string, "
+				+ "followed by the first n-1 characters of the string, and so on.");
 		String s="Testing";
+		System.out.println("String is "+s+".");
 		int n = 6;
-		System.out.println(printCharacters(s, n));
+		System.out.println("First characters is "+n+".");
+		System.out.println("Result is "+printCharacters(s, n));
 	}
 }

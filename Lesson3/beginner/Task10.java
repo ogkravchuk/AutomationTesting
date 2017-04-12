@@ -18,7 +18,8 @@ public class Task10 {
 		}
 	}
 	public static void main(String[] args) {
-		print(10);
+		System.out.println("Create method which gets a number form 1 to 9 and then prints the * like piramid ");
+		print(3);
 
 	}
 
