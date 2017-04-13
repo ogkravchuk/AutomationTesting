@@ -2,7 +2,7 @@ package pre_intermediate;
 
 public class Task4 {
 			
-		public void half(int[] myArray){
+		public void half(String[] myArray){
 			
 			for(int i = myArray.length/2; i < myArray.length; i++)
 				{				
@@ -12,11 +12,11 @@ public class Task4 {
 		
 		public static void main(String[] args) {
 			
-			int[] array = {1,2,3};
+			String[] array = {"a","b","c","d","i","f"};
 
 			Task4 Four = new Task4();
 
-			System.out.print("The second half of the array is ");
+			System.out.print("The second half of the array is: ");
 			Four.half(array);
 		}
 	}
