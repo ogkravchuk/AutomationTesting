@@ -14,12 +14,20 @@ public class Task2 {
 
 		}
 		public static void main(String[] args) {
+			//Data
 			String word = "Go play";
-			Task2 Two = new Task2();							
+			//Create class
+			Task2 Two = new Task2();
+			System.out.println("Given a string. Write a method which swaps first and last characters and returns a new modified string.");
+			//Print data
 			System.out.println("The word which need to swap is: " + word);
+			//Methods application "First or swapChar"
 			System.out.println("Result of swaping is: " + Two.swapChar(word));
+			//Print
 			System.out.println("Another methot:");
+			//Data and methods application " Second and newSwapChar"
 			Two.newSwapChar("movie");
+			//"movie" data!!!
 		}
 
 }

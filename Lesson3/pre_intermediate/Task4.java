@@ -8,14 +8,20 @@ public class Task4 {
 				{				
 					System.out.print(myArray[i]+" ");
 				}
-		}	
+			if (myArray.length==0)
+				System.out.print("No data");
+			}	
 		
 		public static void main(String[] args) {
+			//Data
 			
-			String[] array = {"a","b","c","d","i","f"};
+			String[] array = {"1","2","3","4","5","6","7"};
+			//Create class
 
 			Task4 Four = new Task4();
-
+			System.out.println("Given an array of integers."+" Write a method which prints the second half of the array. Include the middle element to output,\n"
+					+"if the array has odd number of elements.");
+			//Methods application
 			System.out.print("The second half of the array is: ");
 			Four.half(array);
 		}

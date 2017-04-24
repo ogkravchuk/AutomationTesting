@@ -19,9 +19,11 @@ public class Task7 {
 	
 	
 	public static void main(String[] args) {
+		//Data
 		int[] myArray = {1,2,3,3,4,5,6,7,9,12,-55};
+		//Create class
 		Task7 Seven = new Task7();
-
+		//Methods application
 		System.out.println(Seven.min(myArray));
 		System.out.println(Seven.max(myArray));
 	}
