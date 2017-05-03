@@ -23,9 +23,9 @@ public class Task6 {
         	avg = summ(myArray) / myArray.length;
 		if (myArray.length==0)
 			System.out.println("Thats bad");
-		else
-			System.out.println("The sum of array elements is:" +summ(myArray)+"\n"+
-			"The arithmetical average of array elements is:"+avg);
+	
+			//System.out.println("The sum of array elements is:" +summ(myArray)+"\n"+
+			//"The arithmetical average of array elements is:"+avg);
 
 		return avg;
 
@@ -33,15 +33,15 @@ public class Task6 {
 
 	public static void main(String[] args) {
 		//Data
-		int[] myArray = {1,2,3,3,5,6,5};
+		int[] myArray = {1,2,3,2,5,6};
 		//Create class
 		Task6 Six = new Task6();
 		System.out.println("Given an array of integers. Write a method which calculates sum of all elements and arithmetic average of them." );
 		//Methods application
-		//System.out.println("The sum of array elements is: "+Six.summ(myArray));
-		//System.out.println("The arithmetical average of array elements is: "+Six.avg(myArray));
+		System.out.println("The sum of array elements is: "+Six.summ(myArray));
+		System.out.println("The arithmetical average of array elements is: "+Six.avg(myArray));
 		//Six.summ(myArray);
-		Six.avg(myArray);
+		//Six.avg(myArray);
 	}
 
 }

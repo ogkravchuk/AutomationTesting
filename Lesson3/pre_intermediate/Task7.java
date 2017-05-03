@@ -2,21 +2,21 @@ package pre_intermediate;
 
 public class Task7 {
 
-	
-
-	
 	public int min (int[] myArray) {
 		int min = myArray[0];
-		for (int i:myArray) if (min > i) min = i;
-		return min;
+		for (int i:myArray)
+			if (min > i) 
+				min = i;
+		return min*2;
 	}
 	
 	public int max (int[] myArray) {
 		int max = myArray[0];
-		for (int i:myArray) if (max < i) max = i;
-		return max;
+		for (int i:myArray) 
+			if (max < i) 
+				max = i;
+		return max*2;
 	}
-	
 	
 	public static void main(String[] args) {
 		//Data
@@ -24,8 +24,10 @@ public class Task7 {
 		//Create class
 		Task7 Seven = new Task7();
 		//Methods application
-		System.out.println(Seven.min(myArray));
-		System.out.println(Seven.max(myArray));
+		System.out.println("Given an array of integers. Write a method which finds max and min elements in it and multiplies them by 2.");
+
+		System.out.println("Min element of array that multiplies by 2 is "+Seven.min(myArray));
+		System.out.println("Max element of array that multiplies by 2 is "+Seven.max(myArray));
 	}
 
 }

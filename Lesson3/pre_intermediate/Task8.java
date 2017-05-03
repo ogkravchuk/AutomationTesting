@@ -8,16 +8,11 @@ public class Task8 {
 		int sum = 0;
 		for (int i = 2; i <= 11; i++) {
 			array[i] = array[i-1] + array[i-2];
-
-
 			if (array[i]%2 == 0) {
-
 				sum += array[i];
-
 			}
 		}
 		return sum;
-		
 	}
 	
 	public static void main(String[] args) {

@@ -22,6 +22,7 @@ public class Task9
 		int[] one = {1, 2, 3, 4, 5, -999};
 		//Create class
 		Task9 Nine = new Task9();
+		System.out.println("Write a method which prints multiplication table for the input number");
 		//Method application
 		Nine.multiplicationTable(one);			
 	}	
