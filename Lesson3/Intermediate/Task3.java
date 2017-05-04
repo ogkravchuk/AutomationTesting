@@ -17,11 +17,17 @@ public class Task3 {
 	    	System.out.println("No arrays");
 
 	    }
-       // System.out.println("reversed array : " + Task3.toString(x));
-	    else {
-			System.out.println("Array after reversing: " + Arrays.toString(x));
-	    }
+
 	    return x; 
+	}
+	static void PrintResult(int[] x) 
+	{
+		System.out.print("Array after reversing: ");
+		for (int i = 0; i < x.length; i++) 
+		{
+			System.out.print(+x[i]+" ");
+		}
+		System.out.println();
 	}
 	public static void main(String[] args) {
 		//Data
@@ -32,8 +38,9 @@ public class Task3 {
 		Task3 Three = new Task3();
 		
 		//Method application
-		Three.reverseInPlace(x);
-
 		
+		Three.reverseInPlace(x);
+		Three.PrintResult(x);
+
 	}
 }
