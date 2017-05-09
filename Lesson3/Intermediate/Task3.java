@@ -6,7 +6,7 @@ public class Task3 {
 	public static int[] reverseInPlace(int[] x) {
 
 	    int tmp;    
-	      System.out.println("Array before reversing: " + Arrays.toString(x));
+
 	    for (int i = 0; i < x.length / 2; i++) {
 
 	        tmp = x[i];
@@ -20,11 +20,9 @@ public class Task3 {
 
 	    return x; 
 	}
-	static void PrintResult(int[] x) 
-	{
-		System.out.print("Array after reversing: ");
-		for (int i = 0; i < x.length; i++) 
-		{
+	static void PrintResult(int[] x) {
+
+		for (int i = 0; i < x.length; i++) {
 			System.out.print(+x[i]+" ");
 		}
 		System.out.println();
@@ -38,8 +36,10 @@ public class Task3 {
 		Task3 Three = new Task3();
 		
 		//Method application
-		
+		System.out.println("Array before invert:" );
+		Three.PrintResult(x);
 		Three.reverseInPlace(x);
+		System.out.println("Array after invert:" );
 		Three.PrintResult(x);
 
 	}

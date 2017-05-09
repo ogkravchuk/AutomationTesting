@@ -11,11 +11,18 @@ public class Task4 {
 			if (myArray.length==0)
 				System.out.print("No data");
 			}	
+		static void PrintResult(int[] x) {
+
+			for (int i = 0; i < x.length; i++) {
+				System.out.print(+x[i]+" ");
+			}
+			System.out.println();
+		}
 		
 		public static void main(String[] args) {
 			//Data
 			
-			String[] array = {"1","2","3","4","5","6","7"};
+			String[] x = {"1","2","3","4","5","6","7"};
 			//Create class
 
 			Task4 Four = new Task4();
@@ -23,6 +30,6 @@ public class Task4 {
 					+"if the array has odd number of elements.");
 			//Methods application
 			System.out.print("The second half of the array is: ");
-			Four.half(array);
+			Four.half(x);
 		}
 	}

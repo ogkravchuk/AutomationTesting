@@ -11,7 +11,13 @@ public class Task11{
 		}
 		return a;
 	}	
+	static void PrintResult(int[] x) {
 
+		for (int i = 0; i < x.length; i++) {
+			System.out.print(+x[i]+" ");
+		}
+		System.out.println();
+	}
 public static void main(String[] args) {
 	//Data		
 	int[] testArray = {1,2,3,3,2,1,12,32,12};
@@ -20,7 +26,9 @@ public static void main(String[] args) {
 	System.out.println( "Given an array of integer positive numbers. For example, {4, 6, 0, 1, 2, 3, 1, 9}, but it can be any\n"+
 			"random. Write Java-program which returns True, if sequence {1, 2, 3} appears somewhere in the"+
 			"array. Provide additional boundary checks");
-	//Method application		
+	//Method application	
+	System.out.print("Elements of array are: ");
+	Eleven.PrintResult(testArray);
 	System.out.println("The array has sequence 1 2 3 - " + Eleven.arraySequence(testArray));
 	}
 }

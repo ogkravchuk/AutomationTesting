@@ -30,7 +30,13 @@ public class Task6 {
 		return avg;
 
 	}
+	static void PrintResult(int[] x) {
 
+		for (int i = 0; i < x.length; i++) {
+			System.out.print(+x[i]+" ");
+		}
+		System.out.println();
+	}
 	public static void main(String[] args) {
 		//Data
 		int[] myArray = {1,2,3,2,5,6};
@@ -38,6 +44,8 @@ public class Task6 {
 		Task6 Six = new Task6();
 		System.out.println("Given an array of integers. Write a method which calculates sum of all elements and arithmetic average of them." );
 		//Methods application
+		System.out.print("Elements of array are:");
+		Six.PrintResult(myArray);
 		System.out.println("The sum of array elements is: "+Six.summ(myArray));
 		System.out.println("The arithmetical average of array elements is: "+Six.avg(myArray));
 		//Six.summ(myArray);
