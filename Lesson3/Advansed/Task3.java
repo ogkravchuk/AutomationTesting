@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 public class Task3 {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public void Logic() {
 		System.out.print("Enter passed number of test cases (TC): ");
 		Scanner myScanner = new Scanner(System.in);
 		int passedTC = myScanner.nextInt();
@@ -50,5 +49,9 @@ public class Task3 {
 			System.out.println("Build is not stable. You should work better!");
 		}
 	}
-
+	public static void main(String[] args) {
+		Task3 task3 = new Task3();
+		task3.Logic();
+	}
 }
+
