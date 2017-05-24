@@ -12,5 +12,11 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="D:/Работа/java_Libs/poi-3.16.jar"/>
+	<classpathentry kind="lib" path="D:/Работа/java_Libs/poi-examples-3.16.jar"/>
+	<classpathentry kind="lib" path="D:/Работа/java_Libs/poi-excelant-3.16.jar"/>
+	<classpathentry kind="lib" path="D:/Работа/java_Libs/poi-ooxml-3.16.jar"/>
+	<classpathentry kind="lib" path="D:/Работа/java_Libs/poi-ooxml-schemas-3.16.jar"/>
+	<classpathentry kind="lib" path="D:/Работа/java_Libs/poi-scratchpad-3.16.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
