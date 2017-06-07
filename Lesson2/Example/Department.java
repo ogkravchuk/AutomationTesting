@@ -17,7 +17,7 @@ public  class Department implements Unit{
 	}
 	public void  addEmployee(Employee newEmployee){
 		employees.add(newEmployee);
-		// связываем сотрудника с этим отделом
+
 		newEmployee.setDepartment(this); 
 	}
 	public Set<Employee>  getEmployees(){

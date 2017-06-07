@@ -11,17 +11,17 @@ public  class Employee extends Man{
 	private Set<Room> room = new HashSet<Room>();
 	private Department department;
 	private Set<PastPosition> pastPosition = new HashSet<PastPosition>();
-	// создаем и конструктор
+
 	public  Employee(String cName, String cSurname, String cPosition){
 		name = cName;
 		surname = cSurname;
 		position = cPosition;
 	}
 	public void setPosition(String newPosition){				
-			// сначала должность заносим в список прежних должностей
+
 			PastPosition pastPosition = new PastPosition(this.getPosition(), this.getDepartment());				
 			this.setPastPosition(pastPosition);
-			// меняем должность
+
 			position = newPosition;
 	}
 	public String getPosition(){

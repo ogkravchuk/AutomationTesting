@@ -1,6 +1,5 @@
 package Example;
 
-import java.awt.Menu;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -53,6 +52,6 @@ public class UmlRelations
 		Employee employees[] = new Employee[10];
 		employees[0]= sysEngineer;
 		employees[1] = director;
-		//menu.showEmployees(employees);
+		menu.showEmployees(employees);
 	}
 }
