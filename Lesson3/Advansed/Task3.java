@@ -1,57 +1,73 @@
 package Advansed;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 
-public class Task3 {
+import jxl.Sheet;
+import jxl.Workbook;
+import jxl.read.biff.BiffException;
 
-	public void Logic() {
-		System.out.print("Enter passed number of test cases (TC): ");
-		Scanner myScanner = new Scanner(System.in);
-		int passedTC = myScanner.nextInt();
-		System.out.print("Enter failed number of test cases (TC): ");
-		myScanner = new Scanner(System.in);
-		int failedTC = myScanner.nextInt();
-		System.out.print("Enter complete number of unresolved issues (bugs): ");
-		myScanner = new Scanner(System.in);
-		int completeBugs = myScanner.nextInt();
-		System.out.print("Enter number of unresolved issues (bugs) with HIGH priority: ");
-		myScanner = new Scanner(System.in);
-		int highBugs = myScanner.nextInt();
-		System.out.print("Enter number of unresolved issues (bugs) with Blocker and Critical severity: ");
-		myScanner = new Scanner(System.in);
-		int blockerBugs = myScanner.nextInt();
-		myScanner.close();
-		System.out.println();
-		if (Metrics.percentFailedTC(passedTC, failedTC)<20){
-			System.out.println("Failed TCs equal "+Metrics.percentFailedTC(passedTC, failedTC)+"%. Condition passed");			
-		}else{
-			System.out.println("Failed TCs equal "+Metrics.percentFailedTC(passedTC, failedTC)+"%. Condition failed(less than 20% failed TC)");
-		}
-		if (highBugs<=10){
-			System.out.println("Bugs with HIGH priority equal "+highBugs+". Condition passed");
-		}else{
-			System.out.println("Bugs with HIGH priority equal "+highBugs+". Condition failed(less than 10 bugs with HIGH priority)");
-		}
-		if (blockerBugs<=5){
-			System.out.println("Bugs with Blocker and Critical severity equal "+blockerBugs+". Condition passed");
-		}else{
-			System.out.println("Bugs with Blocker and Critical severity equal "+blockerBugs+". Condition failed(less than 5 bugs with Blocker and Critical severity)");
-		}
-		if (Metrics.percentBlockerIssues(completeBugs, blockerBugs)<5){
-			System.out.println("Bugs with Blocker and Critical severity(percent) equal "+Metrics.percentBlockerIssues(completeBugs, blockerBugs)+"%. Condition passed");			
-		}else{
-			System.out.println("Bugs with Blocker and Critical severity(percent) "+Metrics.percentBlockerIssues(completeBugs, blockerBugs)+"%. Condition failed(less than 5% bugs with Blocker and Critical severity)");
-		}
-		System.out.println();
-		if (Metrics.percentFailedTC(passedTC, failedTC)<20 && highBugs<=10 && blockerBugs<=5 && Metrics.percentBlockerIssues(completeBugs, blockerBugs)<5){
-			System.out.println("Build is stable. Let release it!!");
-		}else{
-			System.out.println("Build is not stable. You should work better!");
-		}
+public class Task3 {
+	private int passedTestCases;
+	private int failedTestCases;
+	private int totalBugs;
+	private int highPriorityBugs;
+	private int blockerCriticalBugs;
+
+	public int getPassedTestCases() {
+		return passedTestCases;
 	}
-	public static void main(String[] args) {
-		Task3 task3 = new Task3();
-		task3.Logic();
+
+	public int getFailedTestCases() {
+		return failedTestCases;
+	}
+
+	public int getTotalBugs() {
+		return totalBugs;
+	}
+
+	public int getHighPriorityBugs() {
+		return highPriorityBugs;
+	}
+
+	public int getBlockerCriticalBugs() {
+		return blockerCriticalBugs;
+	}
+
+	public void readTestResults(String inputFile) throws BiffException, IOException {
+		Sheet sheetWithInput = Workbook.getWorkbook(new File(inputFile)).getSheet(0);
+		passedTestCases = Integer.parseInt(sheetWithInput.getCell(1, 0).getContents());
+		failedTestCases = Integer.parseInt(sheetWithInput.getCell(1, 1).getContents());
+		totalBugs = Integer.parseInt(sheetWithInput.getCell(1, 2).getContents());
+		highPriorityBugs = Integer.parseInt(sheetWithInput.getCell(1, 3).getContents());
+		blockerCriticalBugs = Integer.parseInt(sheetWithInput.getCell(1, 4).getContents());
+	}
+	public void buildAssesment(int passedTestCases, int failedTestCases, int totalBugs, int highPriorityBugs,
+			int blockerCriticalBugs) {
+		Metrics metrics = new Metrics(passedTestCases, failedTestCases, totalBugs, highPriorityBugs,
+				blockerCriticalBugs);
+		if (metrics.isBuildSuccess() == true)
+			System.out.println("--Build Assesment--\nCurrent build is stable!");
+		else {
+			System.out.println("--Build Assesment--\nCurrent build cannot be released!\nThe reasons are:");
+			if (metrics.isTestCasesPercentageSuccess() == false)
+				System.out.println("More than 20 percent test cases failed");
+			if (metrics.isHighPriorityBugsSuccess() == false)
+				System.out.println("More than 10 unsolved high priority bugs");
+			if (metrics.isBlockerSevereBugsSuccess() == false)
+				System.out.println("At least 5 unsolved Blocker/Critical bugs");
+			if (metrics.isBlockerBugsPercentageSuccess() == false)
+				System.out.println("More than 5 percent of unsolved nugs are critical");
+		}
+	
+	}
+
+	public static void main(String[] args) throws BiffException, IOException {
+		String workFile = "D:/Учеба/read.xls";
+		Task3 myInstance = new Task3();
+		myInstance.readTestResults(workFile);
+		myInstance.buildAssesment(myInstance.getPassedTestCases(), myInstance.getFailedTestCases(),
+				myInstance.getTotalBugs(), myInstance.getHighPriorityBugs(), myInstance.getBlockerCriticalBugs());
 	}
 }
-

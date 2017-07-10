@@ -15,7 +15,6 @@ public class Task1
 	String passwordTemplate="";
 	private String generatePasswordTemplate(int passwordLength)
 	{		
-		
 		do			
 		{
 			

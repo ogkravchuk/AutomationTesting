@@ -19,5 +19,6 @@
 	<classpathentry kind="lib" path="D:/Работа/java_Libs/poi-ooxml-schemas-3.16.jar"/>
 	<classpathentry kind="lib" path="D:/Работа/java_Libs/poi-scratchpad-3.16.jar"/>
 	<classpathentry kind="src" path="Lesson2"/>
+	<classpathentry kind="lib" path="D:/Учеба/jxl-2.6.12.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
