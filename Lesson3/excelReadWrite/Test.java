@@ -1,4 +1,4 @@
-package excelRadWrite;
+package excelReadWrite;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -12,7 +12,7 @@ public class Test {
 	public static void main(String[] args) throws IOException {
 		Workbook wb = new HSSFWorkbook();
 		Sheet sheet=wb.createSheet("mySheet");
-		FileOutputStream fos = new FileOutputStream("my.xls");
+		FileOutputStream fos = new FileOutputStream("myExcel.xls");
 		wb.write(fos);
 		fos.close();
 }
